@@ -1,0 +1,81 @@
+<div class="page">
+<div role="tabpanel">
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs" role="tablist">
+		<li role="presentation" class="active"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"><span class="fa fa-gears"></span> Settings</a></li>
+		<li role="presentation"><a href="#template" aria-controls="template" role="tab" data-toggle="tab"><span class="fa fa-code"></span> Template</a></li>
+		<li role="presentation"><a href="#css" aria-controls="css" role="tab" data-toggle="tab"><span class="fa fa-css3"></span> Css</a></li>
+		<li role="presentation"><a href="#script" aria-controls="script" role="tab" data-toggle="tab"><span class="fa fa-coffee"></span> JavaScript</a></li>
+		<li role="presentation"><a href="#options" aria-controls="options" role="tab" data-toggle="tab"><span class="fa fa-check-square-o"></span> Options</a></li>
+		<i id="save" class="fa fa-save pull-right btn btn-success btn-xs"> Save</i>    
+		<a href="/services/export/{{id}}" style="color:#fff" id="export" class="fa fa-paper-plane-o pull-right btn btn-success btn-xs"> Export</a>
+		<i style="color:#fff" id="update" class="fa fa-magic pull-right btn btn-success btn-xs"> Update</i>
+	</ul>
+
+	<!-- Tab panes -->
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane active" id="settings">
+			<section class="panel panel-default">
+				<!-- <div class="panel-heading"><span class="fa fa-gears"></span> Settings</div> -->
+				<div class="panel-body" style="padding:0">
+					<div id="settingscontainer" style="height:500px;padding:20px"></div>
+				</div>
+			</section>
+		</div>
+		<div role="tabpanel"id="template" class="tab-pane" >
+			<section class="panel panel-default">
+				<div class="panel-heading"><span class="fa fa-code"></span> Template <span class="btn btn-default btn-sm pull-right" id="toggle_template_editor">Switch Editor</span></div>
+				<div class="panel-body" style="padding:0">
+					<div id="templatecontainer" style="height:500px"></div>
+				</div>
+			</section>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="css">
+			<section class="panel panel-default">
+				<div class="panel-heading"><span class="fa fa-css3"></span> Style</div>
+				<div class="panel-body" style="padding:0">
+					<div id="csscontainer" style="height:500px"></div>
+				</div>
+			</section>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="script">
+			<section class="panel panel-default">
+						<div class="btn-group pull-right" style="margin: 10px;">
+			<button type="button" class="btn btn-info go" id="new_js">New File</button>
+			<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span class="caret"></span>
+				<span class="sr-only">Toggle Dropdown</span>
+			</button>
+			<ul class="dropdown-menu dropdown-menu-right">
+				<li><a href="javascript:void(0);" id="edit_js" data-id="{{start}}id{{end}}"><i class="fa fa-pencil"></i> Edit File Name</a></li>
+				<li><a href="javascript:void(0);" id="delete_js" data-id="{{start}}id{{end}}"><i class="fa fa-times"></i> Delete File</a></li>
+			</ul>
+		</div>
+				<div class="panel-heading">
+					<!-- <span class="btn btn-default btn-sm pull-right" id="new_js">New File</span> -->
+					<ul class="nav nav-tabs" role="tablist">
+						{{#script}}
+						<li role="presentation" class=""><a data-file="{{name}}" href="#js_filename" aria-controls="js_Main" role="tab" data-toggle="tab"></span> {{name}}</a></li>
+						{{/script}}
+					</ul> 
+				</div>
+				<div class="panel-body" style="padding:0">
+					<div id="scriptcontainer" style="height:500px">
+
+					</div>
+				</div>
+			</section>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="options">
+			<section class="panel panel-default">
+				<div class="panel-body" style="padding:0">
+					<div id="optionscontainer">
+						<div class="source" id="alt-sidebar" style="width:400px;float:right;position: relative;height: 600px;margin-right:15px"></div>
+						<div id="editor" style="min-height:500px;position:relative;margin-right:445px;margin-top:20px;margin-left:30px"></div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+</div>

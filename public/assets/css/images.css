@@ -1,0 +1,33 @@
+.grid {
+	list-style: none;
+}
+
+.grid li {
+	display: inline-block;
+	width: 16.666%;
+	margin: 0;
+	padding: 5px;
+	text-align: left;
+	position: relative;
+}
+
+.grid figure {
+	margin: 0;
+	position: relative;
+}
+
+.grid figure img {
+	width: 100%;
+	display: block;
+	position: relative;
+}
+
+@media screen and (max-width: 31.5em) {
+	.grid {
+		padding: 10px 10px 100px 10px;
+	}
+	.grid li {
+		width: 100%;
+		min-width: 300px;
+	}
+}

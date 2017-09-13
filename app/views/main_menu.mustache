@@ -1,0 +1,26 @@
+<li class="visible-xs">
+	<a href="#">{{user.first_name}} {{user.last_name}}</a>	
+			<ul>
+				<!-- <li><a href="/myprofile#/mygroups"><i class="ti-angle-right"></i> <span>My Profile</span> </a></li> -->
+				<li><a href="/logout"><i class="ti-angle-right"></i> <span>Log Out</span> </a></li>
+			</ul>
+		<i class="ti-angle-down icon-has-ul-h"></i><i class="ti-angle-double-right icon-has-ul"></i>
+</li>
+{{#items}}
+	{{#priority}}
+		<li class="community_{{id}}"><a href="/community/{{id}}"> <span data-i18n="{{name}}">{{name}}</span> </a></li>
+	{{/priority}}
+{{/items}}
+{{#hassecondary}}
+<li class="community_other">
+		<a href="#">Other</a>
+		<ul>
+			{{#secondary}}
+				{{^priority}}
+					<li class="community_{{id}}"><a href="/community/{{id}}"><i class="ti-angle-right"></i> <span data-i18n="{{name}}">{{name}}</span> </a></li>
+				{{/priority}}
+			{{/secondary}}
+		</ul>
+		<i class="ti-angle-down icon-has-ul-h"></i><i class="ti-angle-double-right icon-has-ul"></i>
+</li>
+{{/hassecondary}}

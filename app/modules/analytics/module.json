@@ -1,0 +1,6 @@
+{
+	"enabled": true,
+  "include": [
+    "controllers/AnalyticsController.php"
+	]
+}

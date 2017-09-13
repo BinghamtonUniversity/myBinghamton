@@ -1,0 +1,185 @@
+<div class="panel-page">
+	<section class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				{{name}} <span class="text-muted">({{slug}})</span>
+			</h4>
+
+		</div>
+		<div id="mypanel" class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+
+							<div class="panel panel-default">
+                <div class="panel-heading"><a href="javascript:void(0);" id="options"><strong><span class="fa fa-cogs"></span> Options</strong></a></div>
+                  <ul class="list-unstyled list-info">
+                      <li>
+                          <span class="icon fa fa-exclamation-triangle fa-fw"></span>
+                          <label>Priority</label>
+                          {{#priority}}Primary{{/priority}}{{^priority}}Secondary{{/priority}}
+                      </li>                                
+                      <li>
+                          <span class="icon fa fa-university fa-fw"></span>
+                          <label>Community</label>
+                          {{#community_flag}}Yes{{/community_flag}}{{^community_flag}}No{{/community_flag}}
+                      </li>                                
+                      <li>
+                          <span class="icon fa fa-question fa-fw"></span>
+                          <label>Type</label>
+                          {{type}}
+                      </li>
+                  </ul>
+            </div>
+
+
+						{{#community_flag}}
+						<div class="panel panel-default">
+				      <div class="panel-heading"><a href="/admin/groups/{{id}}/pages"><strong><span class="fa fa-files-o"></span> Pages</strong></a></div>
+				      <ul class="list-group">
+				      	{{#pages}}
+				   				<a target="_blank" href="/community{{path}}{{slug}}"  class="list-group-item">{{name}}</a>
+				        {{/pages}}
+				      </ul>
+				    </div>
+				    <div class="panel panel-default">
+				      <div class="panel-heading"><a href="/admin/groups/{{id}}/microapps"><strong><span class="fa fa-cubes"></span> Apps</strong></a></div>
+				      <ul class="list-group">
+				      	{{#microapps}}
+				              <a href="/admin/microapps/{{id}}/app" class="list-group-item">{{name}}</a>
+				        {{/microapps}}
+				      </ul>
+				    </div>
+
+				    {{/community_flag}}
+					</div>
+					<div class="col-md-6">			
+						<div class="row">
+							<div class="col-md-6">
+
+
+								<div class="panel panel-default">
+						      <div class="panel-heading"><a href="/admin/groups/{{id}}/composites"><strong><span class="fa fa-puzzle-piece sort"></span> Composites</strong></a></div>
+						      {{#composites.length}}<div class="panel-body">
+										{{#composites}}
+										<span class="label label-success" style="margin-bottom:5px;float:left">{{composite.slug}}</span><div style="float:left" class="space"></div>
+										{{/composites}}
+									</div>
+									{{/composites.length}}
+						    </div>
+							</div>
+							<div class="col-md-6">
+								<div class="panel panel-default">
+						      <div class="panel-heading"><a href="/admin/groups/{{id}}/tags"><strong><span class="fa fa-tags"></span> Tags</strong></a></div>
+					      		<ul class="list-unstyled list-info">
+												{{#tags}}
+												<li>
+		                        <span class="icon fa fa-tag fa-fw"></span>
+		                        <label>{{name}}</label>
+		                        {{value}}
+		                    </li>   
+												{{/tags}}
+		                </ul>
+						    </div>
+						  </div>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-6">
+								<a href="/admin/groups/{{id}}/members">
+								<section class="panel panel-box info-box">
+							      <div class="panel-left panel-item bg-success">
+							          <i class="ti-user text-large stat-icon"></i>
+							      </div>
+							      <div class="panel-right panel-item bg-reverse">
+							          <p class="size-h1 no-margin">{{members_count.aggregate}}{{^members_count}}0{{/members_count}}</p>
+							          <p class="text-muted no-margin"><span data-translate="GROWTH" class="ng-scope">Members</span></p>
+							      </div>
+							  </section>
+							</a>
+							</div>
+							<div class="col-xs-6">
+								<a href="/admin/groups/{{id}}/admins">
+								<section class="panel panel-box info-box">
+							      <div class="panel-left panel-item bg-danger">
+							          <i class="ti-settings text-large stat-icon"></i>
+							      </div>
+							      <div class="panel-right panel-item bg-reverse">
+							          <p class="size-h1 no-margin">{{admins_count.aggregate}}{{^admins_count}}0{{/admins_count}}</p>
+							          <p class="text-muted no-margin"><span data-translate="GROWTH" class="ng-scope">Admins</span></p>
+							      </div>
+							  </section>
+								</a>
+							</div>
+						</div>
+								{{#community_flag}}
+
+						<div class="row">
+							<div class="col-xs-6">
+								<a href="/admin/groups/{{id}}/images">
+								<section class="panel panel-box info-box">
+							      <div class="panel-left panel-item bg-warning">
+							          <i class="ti-image text-large stat-icon"></i>
+							      </div>
+							      <div class="panel-right panel-item bg-reverse">
+							          <p class="size-h1 no-margin">{{images_count.aggregate}}{{^images_count}}0{{/images_count}}</p>
+							          <p class="text-muted no-margin"><span data-translate="GROWTH" class="ng-scope">Images</span></p>
+							      </div>
+							  </section>
+								</a>
+							</div>
+							<div class="col-xs-6">
+								<a href="/admin/groups/{{id}}/polls">
+								<section class="panel panel-box info-box">
+							      <div class="panel-left panel-item bg-info">
+							          <i class="ti-menu-alt text-large stat-icon"></i>
+							      </div>
+							      <div class="panel-right panel-item bg-reverse">
+							          <p class="size-h1 no-margin">{{polls_count.aggregate}}{{^polls_count}}0{{/polls_count}}</p>
+							          <p class="text-muted no-margin"><span data-translate="GROWTH" class="ng-scope">Polls</span></p>
+							      </div>
+							  </section>
+								</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">
+								<a href="/admin/groups/{{id}}/forms">
+								<section class="panel panel-box info-box">
+							      <div class="panel-left panel-item bg-primary">
+							          <i class="ti-check-box text-large stat-icon"></i>
+							      </div>
+							      <div class="panel-right panel-item bg-reverse">
+							          <p class="size-h1 no-margin">{{forms_count.aggregate}}{{^forms_count}}0{{/forms_count}}</p>
+							          <p class="text-muted no-margin"><span data-translate="GROWTH" class="ng-scope">Forms</span></p>
+							      </div>
+							  </section>
+								</a>
+							</div>
+							<div class="col-xs-6">
+								<a href="/admin/groups/{{id}}/endpoints">
+								<section class="panel panel-box info-box">
+							      <div class="panel-left panel-item bg-orange">
+							          <i class="ti-target text-large stat-icon"></i>
+							      </div>
+							      <div class="panel-right panel-item bg-reverse">
+							          <p class="size-h1 no-margin">{{endpoints_count.aggregate}}{{^endpoints_count}}0{{/endpoints_count}}</p>
+							          <p class="text-muted no-margin"><span data-translate="GROWTH" class="ng-scope">Endpoints</span></p>
+							      </div>
+							  </section>
+								</a>
+							</div>
+						</div>
+						{{/community_flag}}
+
+
+					</div>
+				</div>
+		</div>
+	</section>
+</div>
+
+
+
+
+
+

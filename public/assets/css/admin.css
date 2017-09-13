@@ -1,0 +1,6 @@
+.thumbnail .caption
+{
+overflow: hidden;
+max-height: 28px;
+}
+.grid{padding-left: 0}

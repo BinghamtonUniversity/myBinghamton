@@ -1,0 +1,23 @@
+<div class="panel-group" id="{{guid}}" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+	{{#groups}}
+		<div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title fa fa-collapse">
+        <a data-toggle="collapse" style="font-family: FontAwesome, 'Open Sans', sans-serif;" href="#{{title}}{{guid}}" {{#collapse}}class="collapsed"{{/collapse}}aria-expanded="true" aria-controls="{{title}}{{guid}}">
+          {{{label}}}
+        </a>
+      </h4>
+    </div>
+    <div id="{{title}}{{guid}}" class="panel-collapse {{#collapse}}collapse{{/collapse}}{{^collapse}}in{{/collapse}}" role="tabpanel" aria-labelledby="{{title}}{{guid}}">
+      <div class="panel-body" style="padding:0">
+        {{#filterable}}<input type="text" class="form-control filter" data-selector="#{{guid}} #{{title}}" name="filter" placeholder="Filter...">{{/filterable}}
+
+      	<div class="list-group" style="margin-bottom:0;min-height:30px" data-title="{{title}}" id="{{title}}" data-label="{{label}}">
+	     		{{#links}}
+						<a href="{{link}}" data-guid="{{guid}}" data-image="{{image}}" data-icon="{{icon}}" data-color="{{color}}" data-link="{{link}}" data-title="{{title}}" target="_blank" class="{{#filterable}}filterable{{/filterable}} list-group-item" style="color:#005A43">{{#icon}}<i style="color:{{color}}"  class="{{icon}}"></i>{{/icon}} {{#image}}<img height="16px" src="{{image}}"/>{{/image}} {{title}}<i style="font-size:21px;position: absolute;top: 10px;right: 10px;{{#favorites}}color:gold{{/favorites}}" class="favorites parent-hover fa fa-star{{^favorites}}-o{{/favorites}}"></i></a>
+					{{/links}}
+				</div>
+      </div>
+    </div>
+	{{/groups}}
+</div>

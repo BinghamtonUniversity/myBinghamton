@@ -1,0 +1,18 @@
+.editing .view-container:hover .column{min-height: 100px;outline: dashed 1px #fff;}
+.editing .widget:hover{/*outline: dotted 1px #19491D;*/box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);}
+
+
+.editing .edit-hide{display: none !important;}
+.edit-show{display: none !important;}
+.editing .edit-show{display: block !important;}
+
+.row .column:last-child {
+    padding-right: 15px;
+}
+.row .column:first-child {
+    padding-left: 15px;
+}
+.column {
+    padding-left: 10px;
+    padding-right: 10px;
+}

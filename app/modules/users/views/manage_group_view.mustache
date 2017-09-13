@@ -1,0 +1,72 @@
+<div style="margin:0 30px">
+	<div class="row"><h3><span class="text-muted">Manage Group:</span> {{name}}</h3></div>
+	<div class="row" id="embeddedContent">
+		<div role="tabpanel">
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+{{^closed}}
+				<li role="presentation"><a href="#members" aria-controls="members" role="tab" data-toggle="tab">Members</a></li>
+				<li role="presentation"><a href="#admins" aria-controls="admins" role="tab" data-toggle="tab">Admins</a></li>
+{{/closed}}
+			</ul>
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="settings" style="margin:15px">...</div>
+
+{{^closed}}
+				<div role="tabpanel" class="tab-pane" id="members">
+					<div class="page">
+						<section class="panel panel-default">
+							<div class="panel-heading"><span class="fa fa-group"></span> Members<i class="add-member btn btn-success btn-xs pull-right fa fa-plus"> Add Member</i></div>
+							<div class="panel-body">
+							<div class="list-group cs-style-6" id="group-list">
+							{{#members}}
+							<a href="javascript:void(0);" class="list-group-item">
+								{{group_pidm}}
+								<div class="btn-group actions parent-hover" style="position:absolute;top:10px;right:20px;">
+									<span class="btn btn-danger tooltips" title="Remove&nbsp;From&nbsp;Group"><i class="fa fa-minus"></i></span><span></span>
+								</div>
+							</a>
+							{{/members}}
+							 </div>
+							{{^members}}
+								<div class="panel-body">
+									<h4>No Groups</h4>
+								</div>
+							{{/members}}
+							</div>
+						</section>
+					</div>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="admins">
+					<div class="page">
+						<section class="panel panel-default">
+							<div class="panel-heading"><span class="fa fa-group"></span> Admins<i class="add-admin btn btn-success btn-xs pull-right fa fa-plus"> Add Admin</i></div>
+							<div class="panel-body">
+							<div class="list-group cs-style-6" id="group-list">
+							{{#admins}}
+							<a href="javascript:void(0);" class="list-group-item">
+								{{admin_pidm}}
+								<div class="btn-group actions parent-hover" style="position:absolute;top:10px;right:20px;">
+									<span class="btn btn-danger tooltips" title="Remove&nbsp;Priveliges"><i class="fa fa-minus"></i></span><span></span>
+								</div>
+							</a>
+							{{/admins}}
+							 </div>
+							{{^admins}}
+								<div class="panel-body">
+									<h4>No Groups</h4>
+								</div>
+							{{/admins}}
+							</div>
+						</section>
+					</div>
+				</div>
+
+{{/closed}}
+			</div>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,10 @@
+<div class="panel panel-default">
+<div class="panel-heading" style="position:relative">
+	<h3 class="panel-title">{{title}}{{^title}}{{loaded.name}}{{^loaded.name}}{{{widgetType}}}{{/loaded.name}}{{/title}}</h3>
+</div>
+	<div class="collapsible panel-body {{#collapsed}}wf-collapsed" style="display: none;{{/collapsed}}">
+		<div class="container"><h4 style="color:#274E13;">{{{loaded.name}}}</h4>
+		<h6 class="text-danger">* Required</h6></div>
+		<div style="margin:15px" class="form_content"></div>
+	</div>
+</div>

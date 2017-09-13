@@ -1,0 +1,15 @@
+<div class="panel-page">
+<section class="panel panel-default">
+	<div class="panel-heading"><h4 class="panel-title"><span class="fa fa-folder-open"></span>Pages {{name}} <span class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add Page</span></h4></div><div class="panel-body">
+	<ul class="list-group" style="margin:-15px" id="group-list">
+	{{#models}}
+		{{>community_page_view}}
+	{{/models}}
+	</ul>
+	{{^models}}
+			<h4 class="empty-list">No Community Pages</h4>
+	{{/models}}
+
+	</div>
+</section>
+</div>

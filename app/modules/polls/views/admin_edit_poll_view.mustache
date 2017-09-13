@@ -1,0 +1,12 @@
+<div class="panel-page">
+<section class="panel panel-default">
+	<div class="panel-heading"><h4 class="panel-title"><span class="fa fa-list-ol"></span> {{poll_name}}<span class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add Choice</span></h4></div>
+	<div class="panel-body">
+	<ul class="list-group" id="group-list" style="margin:-15px">
+		{{#content}}
+		{{>admin_edit_poll_item_view}}
+		{{/content}}
+	</ul>
+	</div>
+</section>
+</div>

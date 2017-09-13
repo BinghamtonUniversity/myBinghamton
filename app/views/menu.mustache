@@ -1,0 +1,26 @@
+<ul id="nav" class="nav" data-ng-controller="NavCtrl" data-slim-scroll="" data-collapse-nav="" data-highlight-active="" style="overflow: auto; width: auto; height: 100%;">
+	<li class="visible-xs">
+		<a href="#">{{user.first_name}} {{user.last_name}}</a>	
+		<ul>
+			<!-- <li><a href="/myprofile#/mygroups"><i class="ti-angle-right"></i> <span>My Profile</span> </a></li> -->
+			<li><a href="/logout"><i class="ti-angle-right"></i> <span>Log Out</span> </a></li>
+		</ul>
+		<i class="ti-angle-down icon-has-ul-h"></i><i class="ti-angle-double-right icon-has-ul"></i>
+	</li>
+	{{#items}}
+	<li>
+		<a {{^children}}href="/admin/{{url}}"{{/children}}>
+			<i class="fa fa-{{ icon }}"></i>  
+			<span class="menu-item-parent">{{{name}}}</span>
+		</a>
+		{{#children}}<ul>
+			{{#sub-items}}
+			<li>
+				<a href="/admin/{{#url}}{{url}}{{/url}}{{^url}}{{name}}{{/url}}"><i class="fa fa-circle-o"></i> {{name}}</a>
+			</li>
+			{{/sub-items}}
+		</ul>
+		{{/children}}
+	</li>
+	{{/items}}
+</ul>

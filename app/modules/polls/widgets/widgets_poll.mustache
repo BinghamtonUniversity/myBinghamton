@@ -1,0 +1,9 @@
+<div class="panel panel-default">
+<div class="panel-heading" style="position:relative">
+	<h3 class="panel-title">{{title}}{{^title}}{{loaded.poll_name}}{{^loaded.poll_name}}{{{widgetType}}}{{/loaded.poll_name}}{{/title}}</h3>
+</div>
+	<div class="collapsible panel-body {{#collapsed}}wf-collapsed" style="display: none;{{/collapsed}}">
+		<h5>{{{loaded.poll_name}}}</h5>
+		<div class="poll_content"></div>
+	</div>
+</div>

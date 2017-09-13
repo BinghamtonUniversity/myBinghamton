@@ -1,0 +1,10 @@
+<li id="list_{{id}}" data-id="{{id}}" class="list-group-item filterable">
+	<div class="handle"></div>
+	{{#unlist}}<i class="fa fa-eye-slash text-danger"></i> {{/unlist}}{{^unlist}}<i class="fa fa-eye text-success"></i> {{/unlist}}{{name}}
+		<div class="btn-group actions parent-hover" style="position:absolute;top:10px;right:20px;">
+			<span class="btn btn-default tooltips fa fa-pencil" title="Edit&nbsp;Page"></span><span></span>
+			<a href="/community/{{group_id}}/{{slug}}" class="btn btn-default tooltips" title="Go&nbsp;To&nbsp;Page"><i class="fa fa-external-link"></i></a><span></span>
+			<span class="btn btn-danger tooltips fa fa-times" title="Delete&nbsp;Page"></span><span></span>
+		</div>
+</li>
+

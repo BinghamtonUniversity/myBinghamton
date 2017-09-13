@@ -1,0 +1,30 @@
+<div>
+  <div class="btn-group pull-right actions parent-hover" style="position:absolute;top:3px;right:3px;z-index:6">
+    <span class="btn btn-default btn-sm fa-plus fa wf-add" data-event="add" title="Add Link"></span>
+  <span class="btn btn-default btn-sm fa-pencil fa wf-edit edit-item" title="Edit&nbsp;Settings"></span>
+    <span class="btn btn-default btn-sm fa-eye fa wf-manage" data-event="manage" title="Visibility&nbsp;Settings"></span>
+    <!-- <span class="btn btn-default btn-sm ti-minus wf-min" title="Minimize"></span> -->
+    <span class="btn btn-danger btn-sm fa fa-times wf-remove remove-item" title="Remove"></span>
+  </div>
+  <div class="panel-group" id="{{guid}}" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+  	{{#groups}}
+  		<div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title fa fa-collapse">
+          <a data-toggle="collapse" style="font-family: FontAwesome, 'Open Sans', sans-serif;" href="#{{title}}{{guid}}" {{#collapse}}class="collapsed"{{/collapse}} aria-expanded="true" aria-controls="{{title}}{{guid}}">
+            {{{label}}}
+          </a>
+        </h4>
+      </div>
+      <div id="{{title}}{{guid}}" class="panel-collapse {{#collapse}}collapse{{/collapse}}{{^collapse}}in{{/collapse}}" role="tabpanel" aria-labelledby="{{title}}{{guid}}">
+        <div class="panel-body" style="padding:0">
+        	<div class="list-group" style="margin-bottom:0;min-height:30px" data-title="{{title}}" data-label="{{label}}">
+  	     		{{#links}}
+  						<div data-image="{{image}}" data-link="{{link}}" data-icon="{{icon}}" data-color="{{color}}" data-title="{{title}}" data-guid="{{guid}}" target="blank" class="list-group-item" style="color:#005A43">{{#icon}}<i style="color:{{color}}" class="{{icon}}"></i>{{/icon}} {{#image}}<img height="16px" src="{{image}}"/>{{/image}} {{title}} <div style="position: absolute;top: 10px;right: 10px;" class="fa fa-times btn btn-danger parent-hover btn-xs"></div></div>
+  					{{/links}}
+  				</div>
+        </div>
+      </div>
+  	{{/groups}}
+  </div>
+</div>

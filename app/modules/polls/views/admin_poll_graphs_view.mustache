@@ -1,0 +1,26 @@
+<div class="page">
+	<div class="row">
+		<div class="col-md-6">
+			<section class="panel panel-default">
+				<div class="panel-heading"><span class="fa fa-table"></span> Poll Results - {{poll_name}}</div>
+				<div class="panel-body">
+					<table class="table  table-bordered  table-hover">
+					<tr><th>Name</th><th>Value</th></tr>
+					    {{#totals}}
+					    <tr><td>{{name}}</td><td>{{value}}</td></tr>
+					    {{/totals}}
+					    <tr><th>Total</th><th>{{total}}</th></tr>
+					</table>
+				</div>
+			</section>
+		</div>
+		<div class="col-md-6">
+			<section class="panel panel-default">
+				<div class="panel-heading"><span class="fa fa-pie-chart"></span> Poll Results</div>
+				<div class="panel-body">
+					<div class="graph" style="min-height:300px"></div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>

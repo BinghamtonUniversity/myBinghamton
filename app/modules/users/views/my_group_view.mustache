@@ -1,0 +1,9 @@
+<a href="javascript:void(0);" class="list-group-item">
+<i class="fa fa-{{#community_flag}}circle{{/community_flag}}{{^community_flag}}circle-o{{/community_flag}}"></i> {{name}}
+{{pivot.messaging_pref}}
+	<div class="btn-group actions parent-hover" style="position:absolute;top:10px;right:20px;">
+		<span class="btn btn-danger btn-xs tooltips fa fa-times" title="Leave&nbsp;Group"></span><span></span>
+		{{#community_flag}}<span class="btn btn-success btn-xs tooltips fa fa-eye" title="Visit&nbsp;Community&nbsp;Page"></span><span></span>{{/community_flag}}
+		<span class="btn btn-default btn-xs tooltips fa fa-gear" title="Edit&nbsp;Settings"></span><span></span>
+	</div>
+</a>
